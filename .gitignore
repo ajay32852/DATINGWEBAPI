@@ -1,0 +1,33 @@
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore assembly files
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.a
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.sln.ide
+*.sln.docstates
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+
+# Ignore logs
+*.log
+
+# Ignore other temporary files
+*.tmp
+*.temp
+
+# Ignore design-time build cache files
+**/.dtbcache.v2
+**/.futdcache.v2
