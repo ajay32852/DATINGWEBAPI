@@ -104,7 +104,7 @@ namespace DATINGWEBAPI.BAL.Utilities.CustomExceptionMiddleware
             using (LogContext.PushProperty("USEREMAIL", userEmail))
             using (LogContext.PushProperty("EVENTDATETIME", eventDateTime))
 
-                _logger.LogError(exception.Message + "-" + exception.StackTrace, clientIp, userId, userEmail, eventDateTime);
+            _logger.LogError(exception.Message + "-" + exception.StackTrace, clientIp, userId, userEmail, eventDateTime);
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)httpStatusCode;

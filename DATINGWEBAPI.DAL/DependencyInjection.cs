@@ -14,10 +14,9 @@ namespace DATINGWEBAPI.DAL
            services.AddDbContext<DatingAPPContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserRepository, UserRepository>();
-            /*services.AddScoped<ITicketRepository, TicketRepository>();
-            services.AddScoped<IParkingLotsRepository, ParkingLotsRepository>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-           */
+            services.AddScoped<IVerificationCodeRepository, VerificationCodeRepository>();
+
+
         }
 
     }

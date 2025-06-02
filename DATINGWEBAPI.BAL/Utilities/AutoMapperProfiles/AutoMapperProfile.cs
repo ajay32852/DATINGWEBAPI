@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using DATINGWEBAPI.DAL.Entities;
 using DATINGWEBAPI.DTO.DTOs;
-using DATINGWEBAPI.DTO.RequestDTO;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
 {
     public static class AutoMapperProfiles
@@ -11,14 +9,9 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
         {
             public AutoMapperProfile()
             {
-                 /*USER MAP DTO*/
                 CreateMap<USER, UserDTO>()
                         .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
-                        .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.EMAIL))
                         .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PHONENUMBER))
-                        .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(src => src.PASSWORDHASH))
-                        .ForMember(dest => dest.AuthProvider, opt => opt.MapFrom(src => src.AUTH_PROVIDER))
-                        .ForMember(dest => dest.ProviderId, opt => opt.MapFrom(src => src.PROVIDERID))
                         .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FIRSTNAME))
                         .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LASTNAME))
                         .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.GENDER))
@@ -34,9 +27,40 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
                         .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UPDATEDAT))
                         .ForMember(dest => dest.LastLogin, opt => opt.MapFrom(src => src.LASTLOGIN))
                         .ForMember(dest => dest.IsBlocked, opt => opt.MapFrom(src => src.ISBLOCKED))
+                        .ForMember(dest => dest.AllowContactAccess, opt => opt.MapFrom(src => src.ALLOWCONTACTACCESS))
+                        .ForMember(dest => dest.EnableNotifications, opt => opt.MapFrom(src => src.ENABLENOTIFICATIONS))
+                        .ForMember(dest => dest.USERINTERESTs, opt => opt.MapFrom(src => src.USERINTERESTs))
+                        .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.LONGITUDE))
+                        .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.LONGITUDE))
+                        .ForMember(dest => dest.IsProfileComplete, opt => opt.MapFrom(src => src.ISPROFILECOMPLETE))
+                        .ForMember(dest => dest.USER_MEDIa, opt => opt.MapFrom(src => src.USER_MEDIa))
                         .ReverseMap();
 
-                        /**/
+                CreateMap<VERIFICATIONCODE, VerificationCodeDTO>()
+                        .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ID))
+                        .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PHONENUMBER))
+                        .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.CODE))
+                        .ForMember(dest => dest.ExpiresAt, opt => opt.MapFrom(src => src.EXPIRESAT))
+                        .ForMember(dest => dest.IsUsed, opt => opt.MapFrom(src => src.ISUSED))
+                        .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATEDAT))
+                        .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                        .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.USER))
+                        .ReverseMap();
+
+                CreateMap<USERINTEREST, UserInterestDTO>()
+                       .ForMember(dest => dest.UserInterestId, opt => opt.MapFrom(src => src.USERINTERESTID))
+                       .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                       .ForMember(dest => dest.InterestId, opt => opt.MapFrom(src => src.INTERESTID))
+                       .ReverseMap();
+                CreateMap<USER_MEDIum, UserMediaDTO>()
+                      .ForMember(dest => dest.MediaId, opt => opt.MapFrom(src => src.MEDIAID))
+                      .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                      .ForMember(dest => dest.MediaUrl, opt => opt.MapFrom(src => src.MEDIA_URL))
+                      .ForMember(dest => dest.StorageId, opt => opt.MapFrom(src => src.STORAGE_ID))
+                      .ForMember(dest => dest.MediaType, opt => opt.MapFrom(src => src.MEDIA_TYPE))
+                      .ForMember(dest => dest.IsProfilePic, opt => opt.MapFrom(src => src.IS_PROFILE_PIC))
+                      .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATED_AT))
+                      .ReverseMap();
 
 
 

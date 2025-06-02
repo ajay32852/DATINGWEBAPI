@@ -1,9 +1,7 @@
 ﻿using DATINGWEBAPI.BAL.Utilities.Common;
 using FluentValidation;
 using Microsoft.Extensions.Localization;
-using DATINGWEBAPI.DTO.DTOs;
 using DATINGWEBAPI.DTO.RequestDTO;
-
 namespace DATINGWEBAPI.BAL.Validators
 {
     public class LoginRequestDTOValidator : AbstractValidator<LoginRequestDTO>
@@ -18,11 +16,11 @@ namespace DATINGWEBAPI.BAL.Validators
                 .NotEmpty().WithMessage(_localizer[ResponseMessage.InvalidMobileNumber.ToString()])
                 .Matches(@"^\d{10}$").WithMessage(_localizer[ResponseMessage.InvalidMobileNumber.ToString()]);
 
-            RuleFor(x => x.Otp)
+            RuleFor(x => x.OTP)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage(_localizer[ResponseMessage.InvalidOTP.ToString()])
                 .Matches(@"^\d{4}$").WithMessage(_localizer[ResponseMessage.InvalidOTP.ToString()])
-                .When(x => !string.IsNullOrEmpty(x.Otp));
+                .When(x => !string.IsNullOrEmpty(x.OTP));
         }
     }
 }
