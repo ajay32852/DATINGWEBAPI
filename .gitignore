@@ -36,3 +36,5 @@ packages/
 *.vs
 *.dll
 *.db
+# Ignore Git worktree files
+.git/worktrees/
