@@ -4,6 +4,7 @@
 
 # Ignore Visual Studio Copilot indices
 .vs/**/CopilotIndices/
+
 # Ignore assembly files
 *.dll
 *.exe
@@ -33,3 +34,6 @@ packages/
 # Ignore design-time build cache files
 **/.dtbcache.v2
 **/.futdcache.v2
+
+# Ignore Rider files (if applicable)
+.idea/
