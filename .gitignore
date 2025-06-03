@@ -31,3 +31,8 @@ packages/
 # Ignore design-time build cache files
 **/.dtbcache.v2
 **/.futdcache.v2
+*.dll
+*.dll
+*.vs
+*.dll
+*.db
