@@ -1,6 +1,7 @@
 # Ignore build output directories
 **/obj/
 **/bin/
+
 # Ignore Visual Studio Copilot indices
 .vs/**/CopilotIndices/
 # Ignore assembly files
