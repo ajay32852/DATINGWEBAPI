@@ -84,5 +84,26 @@ namespace DATINGWEBAPI.BAL.Utilities.Common
             else
                 return false;
         }
+
+        public static string OTPGenerate()
+        {
+            var otp = new Random().Next(1000, 9999).ToString();
+            return otp;
+        }
+
+        public static int CalculateAge(DateTime birthDate)
+        {
+            var today = DateTime.Today;
+            var year = today.Year;
+            var age = year - birthDate.Year;
+            if (birthDate.Date > today.AddYears(-age))
+            {
+                age--;
+            }
+            return age;
+        }
+
+
+
     }
 }

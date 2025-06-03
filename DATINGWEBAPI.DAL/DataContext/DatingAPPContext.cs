@@ -148,16 +148,12 @@ public partial class DatingAPPContext : DbContext
 
             entity.ToTable("USERS");
 
-            entity.Property(e => e.AUTH_PROVIDER)
-                .IsRequired()
-                .HasMaxLength(20);
             entity.Property(e => e.BIO).HasMaxLength(1000);
             entity.Property(e => e.BIRTHDAY).HasColumnType("datetime");
             entity.Property(e => e.CREATEDAT)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.DELETEDAT).HasColumnType("datetime");
-            entity.Property(e => e.EMAIL).HasMaxLength(255);
             entity.Property(e => e.FIRSTNAME).HasMaxLength(100);
             entity.Property(e => e.GENDER).HasMaxLength(10);
             entity.Property(e => e.LASTLOGIN)
@@ -165,10 +161,8 @@ public partial class DatingAPPContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.LASTNAME).HasMaxLength(100);
             entity.Property(e => e.LOCATION).HasMaxLength(255);
-            entity.Property(e => e.PASSWORDHASH).HasMaxLength(255);
             entity.Property(e => e.PHONENUMBER).HasMaxLength(50);
             entity.Property(e => e.PROFILEIMAGEURL).HasMaxLength(500);
-            entity.Property(e => e.PROVIDERID).HasMaxLength(255);
             entity.Property(e => e.ROLE)
                 .IsRequired()
                 .HasMaxLength(20)
@@ -265,6 +259,10 @@ public partial class DatingAPPContext : DbContext
             entity.Property(e => e.PHONENUMBER)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            entity.HasOne(d => d.USER).WithMany(p => p.VERIFICATIONCODEs)
+                .HasForeignKey(d => d.USERID)
+                .HasConstraintName("FK_VERIFICATIONCODES_USERS");
         });
 
         OnModelCreatingPartial(modelBuilder);

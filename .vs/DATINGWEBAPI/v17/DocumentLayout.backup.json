@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\TestC\\DATINGWEBAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|solutionrelative:datingwebapi.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.dal\\repositories\\verificationcoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|solutionrelative:datingwebapi.dal\\repositories\\verificationcoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.dal\\repositories\\irepositories\\iverificationcoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|solutionrelative:datingwebapi.dal\\repositories\\irepositories\\iverificationcoderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3C15B19C-500C-4959-BCC3-77EBBA9CF93E}|DATINGWEBAPI.BAL\\DATINGWEBAPI.BAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.bal\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,12 +19,32 @@
       "RelativeMoniker": "D:0:0:{95A9A35F-CF82-4F94-8BE1-BB72392BA80E}|DATINGWEBAPI\\DATINGWEBAPI.csproj|solutionrelative:datingwebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.dal\\datacontext\\datingappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|solutionrelative:datingwebapi.dal\\datacontext\\datingappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\requestdto\\profilelikerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\requestdto\\profilelikerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|d:\\testc\\datingwebapi\\datingwebapi.dal\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED0CE7F7-ED57-4D52-AD35-AEC047DBBAD6}|DATINGWEBAPI.DAL\\DATINGWEBAPI.DAL.csproj|solutionrelative:datingwebapi.dal\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\verificationcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\verificationcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\userotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\userotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\usermediadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\usermediadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\userinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\userinterestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|d:\\testc\\datingwebapi\\datingwebapi.dto\\dtos\\requestotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0962B737-DE35-4B5C-9AB0-FB7111F608AE}|DATINGWEBAPI.DTO\\DATINGWEBAPI.DTO.csproj|solutionrelative:datingwebapi.dto\\dtos\\requestotpdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,64 +102,146 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DatingAPPContext.cs",
-              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\DataContext\\DatingAPPContext.cs",
-              "RelativeDocumentMoniker": "DATINGWEBAPI.DAL\\DataContext\\DatingAPPContext.cs",
-              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\DataContext\\DatingAPPContext.cs",
-              "RelativeToolTip": "DATINGWEBAPI.DAL\\DataContext\\DatingAPPContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:30:19.007Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "DATINGWEBAPI.DAL\\DependencyInjection.cs",
-              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\DependencyInjection.cs",
-              "RelativeToolTip": "DATINGWEBAPI.DAL\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:58:00.913Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "DATINGWEBAPI.DAL\\Repositories\\UserRepository.cs",
-              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "DATINGWEBAPI.DAL\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAlwBsAAAANAAAAAAAAAA==",
+              "Title": "VerificationCodeRepository.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\VerificationCodeRepository.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DAL\\Repositories\\VerificationCodeRepository.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\VerificationCodeRepository.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DAL\\Repositories\\VerificationCodeRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:38:22.959Z",
+              "WhenOpened": "2025-06-03T12:27:22.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IVerificationCodeRepository.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\IRepositories\\IVerificationCodeRepository.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DAL\\Repositories\\IRepositories\\IVerificationCodeRepository.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DAL\\Repositories\\IRepositories\\IVerificationCodeRepository.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DAL\\Repositories\\IRepositories\\IVerificationCodeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:26:52.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProfileLikeRequest.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\RequestDTO\\ProfileLikeRequest.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\RequestDTO\\ProfileLikeRequest.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\RequestDTO\\ProfileLikeRequest.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\RequestDTO\\ProfileLikeRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:22:13.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VerificationCodeDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\VerificationCodeDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\VerificationCodeDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\VerificationCodeDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\VerificationCodeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:21:39.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserOTPDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserOTPDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\UserOTPDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserOTPDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\UserOTPDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:21:15.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserMediaDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserMediaDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\UserMediaDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserMediaDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\UserMediaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:20:53.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserInterestDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserInterestDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\UserInterestDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserInterestDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\UserInterestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:20:18.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\UserDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:20:04.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RequestOTPDTO.cs",
+              "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\RequestOTPDTO.cs",
+              "RelativeDocumentMoniker": "DATINGWEBAPI.DTO\\DTOs\\RequestOTPDTO.cs",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.DTO\\DTOs\\RequestOTPDTO.cs",
+              "RelativeToolTip": "DATINGWEBAPI.DTO\\DTOs\\RequestOTPDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:19:39.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.BAL\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "DATINGWEBAPI.BAL\\Services\\AuthService.cs",
               "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI.BAL\\Services\\AuthService.cs",
               "RelativeToolTip": "DATINGWEBAPI.BAL\\Services\\AuthService.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAhwC0AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAawF8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:21:27.038Z"
+              "WhenOpened": "2025-06-03T12:16:34.327Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "DATINGWEBAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "DATINGWEBAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAhwC8AAAAIAAAAAAAAAA==",
+              "ToolTip": "D:\\TestC\\DATINGWEBAPI\\DATINGWEBAPI\\Controllers\\AuthController.cs*",
+              "RelativeToolTip": "DATINGWEBAPI\\Controllers\\AuthController.cs*",
+              "ViewState": "AgIAAEsAAAAAAAAAAAA3wFsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:20:45.795Z"
+              "WhenOpened": "2025-06-03T12:14:52.406Z",
+              "EditorCaption": ""
             }
           ]
         }

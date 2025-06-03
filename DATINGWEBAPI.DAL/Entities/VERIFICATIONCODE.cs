@@ -16,4 +16,8 @@ public partial class VERIFICATIONCODE
     public bool ISUSED { get; set; }
 
     public DateTime CREATEDAT { get; set; }
+
+    public long? USERID { get; set; }
+
+    public virtual USER USER { get; set; }
 }

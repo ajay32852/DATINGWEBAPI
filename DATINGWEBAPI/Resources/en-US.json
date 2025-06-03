@@ -13,7 +13,7 @@
     "ExpiredTicket": "Ticket Expired",
     "UsedTicket": "Ticket is already used",
     "InvalidTicket": "Ticket is not valid",
-    "VerfiedTicket": "Ticket is valid",
+    "OTPExpire": "OTP Expire",
     "EmptyUsername": "Username is Required",
     "InvalidUsername": "The email address you provided is invalid. Please check and try again.",
     "InvalidPasswordLength": "Password minimum length is ",

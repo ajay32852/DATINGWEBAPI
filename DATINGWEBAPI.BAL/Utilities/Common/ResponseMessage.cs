@@ -21,7 +21,7 @@
         ExpiredTicket = 12,
         UsedTicket = 13,
         InvalidTicket = 14,
-        VerfiedTicket = 15,
+        OTPExpire = 15,
         InvalidUsername = 16,
         InvalidPasswordUserType = 17,
         InvalidPasswordLength = 18,

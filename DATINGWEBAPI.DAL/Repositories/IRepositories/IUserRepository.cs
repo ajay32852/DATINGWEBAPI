@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DATINGWEBAPI.DAL.Entities;
+﻿using DATINGWEBAPI.DAL.Entities;
 
 namespace DATINGWEBAPI.DAL.Repositories.IRepositories
 {
@@ -11,5 +6,8 @@ namespace DATINGWEBAPI.DAL.Repositories.IRepositories
     {
         Task<USER> GetUserByMobileAsync(string mobileNo);
         Task<USER> UpdateLastLogin(USER loginUpdateMap);
+        Task<USER> AddNewUser(USER uSER);
+        Task<USER> UpdateProfileDetails(USER userUpdateMap);
+        Task<USER> GetUserByUserId(long userID);
     }
 }

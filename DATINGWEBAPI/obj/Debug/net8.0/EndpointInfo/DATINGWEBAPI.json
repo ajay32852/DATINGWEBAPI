@@ -6,13 +6,52 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Auth/login": {
+    "/api/Auth/request-otp": {
       "post": {
         "tags": [
           "Auth"
         ],
-        "summary": "Login via Mobile",
+        "summary": "Request for OTP",
         "description": "User enters mobile number and receives an OTP via SMS",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestOTPDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestOTPDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestOTPDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OTP Sent Successfully"
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/Auth/verify-otp": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login via Mobile With OTP",
+        "description": "User enter mobile no with OTP",
         "requestBody": {
           "content": {
             "application/json": {
@@ -44,6 +83,26 @@
           }
         }
       }
+    },
+    "/api/User/user-detail": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get User Detail  ",
+        "description": "Get Current User Detail",
+        "responses": {
+          "200": {
+            "description": "OTP Sent Successfully"
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -56,6 +115,67 @@
             "nullable": true
           },
           "otp": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "interestIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "allowContactAccess": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "enableNotifications": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "bio": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestOTPDTO": {
+        "type": "object",
+        "properties": {
+          "mobileNumber": {
             "type": "string",
             "nullable": true
           }
