@@ -1,60 +1,23 @@
-# Ignore build output directories
-bin/
-obj/
-
-# Ignore assembly files
-*.dll
-*.exe
-*.pdb
-*.so
-*.dylib
-*.a
-
-# Ignore Visual Studio files
+# Visual Studio .vs folder
 .vs/
+
+# Object directories
+**/obj/
+**/bin/
+
+# Solution and project cache files
 *.suo
-*.user
-*.sln.ide
-*.sln.docstates
-*.userosscache
-
-# Ignore NuGet packages
-*.nupkg
-packages/
-
-# Ignore logs
-*.log
-
-# Ignore other temporary files
-*.tmp
-*.temp
-
-# Ignore design-time build cache files
-**/.dtbcache.v2
-
-**/.futdcache.v2
-# Ignore executable files
+*.dtbcache.v2
+*.futdcache.v2
+*.dgspec.json
+*.csproj.FileListAbsolute.txt
+*.cache.json
+*.dswa.cache.json
+*.metadata.v9.bin
+*.projects.v9.bin
+*.strings.v9.bin
 *.exe
 
-# Ignore dynamic link libraries
-*.dll
-
-# Ignore program database files
-*.pdb
-
-# Ignore shared object files
-*.so
-
-# Ignore dynamic library files
-*.dylib
-
-# Ignore archive files
-*.a
-
-# Ignore other file extensions
-*.tmp
-*.log
-*.cache
-# Ignore Rider and VS Code project settings
-.idea/
-.vscode/
+# Backup and layout files
+DocumentLayout.json
+DocumentLayout.backup.json
