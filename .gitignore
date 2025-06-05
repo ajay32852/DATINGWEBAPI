@@ -16,6 +16,7 @@ obj/
 *.user
 *.sln.ide
 *.sln.docstates
+*.userosscache
 
 # Ignore NuGet packages
 *.nupkg
@@ -30,4 +31,30 @@ packages/
 
 # Ignore design-time build cache files
 **/.dtbcache.v2
+
 **/.futdcache.v2
+# Ignore executable files
+*.exe
+
+# Ignore dynamic link libraries
+*.dll
+
+# Ignore program database files
+*.pdb
+
+# Ignore shared object files
+*.so
+
+# Ignore dynamic library files
+*.dylib
+
+# Ignore archive files
+*.a
+
+# Ignore other file extensions
+*.tmp
+*.log
+*.cache
+# Ignore Rider and VS Code project settings
+.idea/
+.vscode/
