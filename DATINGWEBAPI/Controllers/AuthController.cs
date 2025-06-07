@@ -69,7 +69,7 @@ namespace DATINGWEBAPI.Controllers
 
 
         [SwaggerOperation(Summary = "Login via Mobile With OTP", Description = "User enter mobile no with OTP")]
-        [SwaggerResponse(200, "OTP Sent Successfully")]
+        [SwaggerResponse(200, "OTP Login Successfully")]
         [SwaggerResponse(400, "Invalid Request")]
         [SwaggerResponse(401, "Unauthorized")]
         [HttpPost("verify-otp")]

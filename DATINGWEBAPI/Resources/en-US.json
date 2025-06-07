@@ -56,6 +56,8 @@
     "DuplicateEntityName": "Entity Name already exist.",
     "DuplicateEntityType": "Entity Type already exist.",
     "UserNotFound": "User  ID is not valid.",
-    "InvalidMobileNumber": "Please enter a valid 10-digit mobile number."
+    "InvalidMobileNumber": "Please enter a valid 10-digit mobile number.",
+    "LikeUserCurrentUserNotAllowed": "You cannot like your own profile.",
+    "AlreadyExistsData": "The provided data already exists. Please use different values."
 
 }

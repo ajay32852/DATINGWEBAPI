@@ -17,10 +17,13 @@ namespace DATINGWEBAPI.BAL
             services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssemblyContaining<UserToLoginDTOValidator>();
             services.AddValidatorsFromAssemblyContaining<LoginRequestDTOValidator>();
+            services.AddValidatorsFromAssemblyContaining<UpdateUserProfileRequestValidator>();
             services.AddFluentValidationClientsideAdapters();
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ISwipeService, SwipeService>();
+
 
             /*services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<IParkingLotsService, ParkingLotsService>();

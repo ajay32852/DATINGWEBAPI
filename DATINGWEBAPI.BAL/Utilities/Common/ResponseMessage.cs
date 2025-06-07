@@ -29,6 +29,8 @@
         DataNotFound = 20,
         UserNotFound = 21,
         InvalidMobileNumber = 22,
+        LikeUserCurrentUserNotAllowed = 23,
+        AlreadyExistsData=24,
     }
 
 }

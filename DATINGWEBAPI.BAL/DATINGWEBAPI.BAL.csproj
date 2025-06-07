@@ -26,7 +26,6 @@
     <ProjectReference Include="..\DATINGWEBAPI.DTO\DATINGWEBAPI.DTO.csproj" />
   </ItemGroup>
   <ItemGroup>
-	  <Folder Include="Utilities\CustomExceptions\" />
 	  <Folder Include="Utilities\AutoMapperProfiles\" />
 	  
   </ItemGroup>
