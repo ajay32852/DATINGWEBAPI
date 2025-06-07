@@ -80,6 +80,20 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
                     .ForMember(dest => dest.Swiped, opt => opt.MapFrom(src => src.SWIPED))
                     .ReverseMap();
 
+                CreateMap<USER_STORy, UserStoryDTO>()
+                  .ForMember(dest => dest.StoryId, opt => opt.MapFrom(src => src.STORYID))
+                  .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                  .ForMember(dest => dest.MediaUrl, opt => opt.MapFrom(src => src.MEDIA_URL))
+                  .ForMember(dest => dest.StorageId, opt => opt.MapFrom(src => src.STORAGE_ID))
+                  .ForMember(dest => dest.MediaType, opt => opt.MapFrom(src => src.MEDIA_TYPE))
+                  .ForMember(dest => dest.Caption, opt => opt.MapFrom(src => src.CAPTION))
+                  .ForMember(dest => dest.IsActive, opt => opt.MapFrom(src => src.IS_ACTIVE))
+                  .ForMember(dest => dest.ExpiresAt, opt => opt.MapFrom(src => src.EXPIRES_AT))
+                  .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATED_AT))
+                  .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UPDATED_AT))
+                  .ForMember(dest => dest.USER, opt => opt.MapFrom(src => src.USER))
+                  .ReverseMap();
+
 
 
 
