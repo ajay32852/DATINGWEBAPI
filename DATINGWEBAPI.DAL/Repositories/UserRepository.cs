@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using DATINGWEBAPI.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace DATINGWEBAPI.DAL.Repositories
 {
     public class UserRepository(DatingAPPContext datingAPPContext, IHttpContextAccessor httpContextAccessor)
@@ -113,9 +112,6 @@ namespace DATINGWEBAPI.DAL.Repositories
                  .FirstOrDefaultAsync();
             return user;
         }
-
-
-
 
     }
 }

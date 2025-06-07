@@ -9,5 +9,7 @@ namespace DATINGWEBAPI.DAL.Repositories.IRepositories
         Task<USER> AddNewUser(USER uSER);
         Task<USER> UpdateProfileDetails(USER userUpdateMap);
         Task<USER> GetUserByUserId(long userID);
+    
+
     }
 }

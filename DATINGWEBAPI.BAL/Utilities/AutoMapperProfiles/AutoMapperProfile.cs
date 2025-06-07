@@ -50,6 +50,8 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
                 CreateMap<USERINTEREST, UserInterestDTO>()
                        .ForMember(dest => dest.UserInterestId, opt => opt.MapFrom(src => src.USERINTERESTID))
                        .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                       .ForMember(dest => dest.USER, opt => opt.MapFrom(src => src.USER))
+                       .ForMember(dest => dest.INTEREST, opt => opt.MapFrom(src => src.INTEREST))
                        .ForMember(dest => dest.InterestId, opt => opt.MapFrom(src => src.INTERESTID))
                        .ReverseMap();
                 CreateMap<USER_MEDIum, UserMediaDTO>()
@@ -62,6 +64,21 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
                       .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATED_AT))
                       .ReverseMap();
 
+                CreateMap<INTEREST, InterestDTO>()
+                    .ForMember(dest => dest.INTERESTID, opt => opt.MapFrom(src => src.INTERESTID))
+                    .ForMember(dest => dest.NAME, opt => opt.MapFrom(src => src.NAME))
+                    .ForMember(dest => dest.ICONURL, opt => opt.MapFrom(src => src.ICONURL))
+                    .ForMember(dest => dest.USERINTERESTs, opt => opt.MapFrom(src => src.USERINTERESTs))
+                    .ReverseMap();
+
+                CreateMap<SWIPE, SwipeDTO>()
+                    .ForMember(dest => dest.SwiperId, opt => opt.MapFrom(src => src.SWIPERID))
+                    .ForMember(dest => dest.SwipedId, opt => opt.MapFrom(src => src.SWIPEDID))
+                    .ForMember(dest => dest.Liked, opt => opt.MapFrom(src => src.LIKED))
+                    .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => src.TIMESTAMP))
+                    .ForMember(dest => dest.Swiper, opt => opt.MapFrom(src => src.SWIPER))
+                    .ForMember(dest => dest.Swiped, opt => opt.MapFrom(src => src.SWIPED))
+                    .ReverseMap();
 
 
 

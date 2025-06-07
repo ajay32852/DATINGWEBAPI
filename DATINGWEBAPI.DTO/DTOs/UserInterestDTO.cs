@@ -7,5 +7,8 @@ namespace DATINGWEBAPI.DTO.DTOs
         public long UserInterestId { get; set; }
         public long UserId { get; set; }
         public long InterestId { get; set; }
+        public virtual InterestDTO INTEREST { get; set; }
+
+        public virtual UserDTO USER { get; set; }
     }
 }

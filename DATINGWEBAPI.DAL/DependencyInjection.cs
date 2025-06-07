@@ -15,7 +15,7 @@ namespace DATINGWEBAPI.DAL
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVerificationCodeRepository, VerificationCodeRepository>();
-
+            services.AddScoped<ISwipeRepository, SwipeRepository>();
 
         }
 
