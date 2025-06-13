@@ -11,11 +11,14 @@ namespace DATINGWEBAPI.DAL
     {
         public static void RegisterDalDependencies(this IServiceCollection services, IConfiguration configuration)
         {
-           services.AddDbContext<DatingAPPContext>(options =>
+            services.AddDbContext<DatingAPPContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVerificationCodeRepository, VerificationCodeRepository>();
             services.AddScoped<ISwipeRepository, SwipeRepository>();
+            services.AddScoped<IUserMediaRepository, UserMediaRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<INotificationSettingRepository, NotificationSettingRepository>();
 
         }
 

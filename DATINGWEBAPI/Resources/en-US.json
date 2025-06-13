@@ -58,6 +58,7 @@
     "UserNotFound": "User  ID is not valid.",
     "InvalidMobileNumber": "Please enter a valid 10-digit mobile number.",
     "LikeUserCurrentUserNotAllowed": "You cannot like your own profile.",
-    "AlreadyExistsData": "The provided data already exists. Please use different values."
-
+    "AlreadyExistsData": "The provided data already exists. Please use different values.",
+    "FileType": "Only image files are allowed.",
+    "FileSize": "Max file size is 5MB"
 }

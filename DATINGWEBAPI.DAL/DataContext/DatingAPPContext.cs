@@ -11,6 +11,8 @@ public partial class DatingAPPContext : DbContext
     {
     }
 
+    public virtual DbSet<APPLICATION_LOG> APPLICATION_LOGs { get; set; }
+
     public virtual DbSet<CONTACT> CONTACTs { get; set; }
 
     public virtual DbSet<DEVICE> DEVICEs { get; set; }
@@ -18,6 +20,8 @@ public partial class DatingAPPContext : DbContext
     public virtual DbSet<INTEREST> INTERESTs { get; set; }
 
     public virtual DbSet<MATCH> MATCHEs { get; set; }
+
+    public virtual DbSet<NOTIFICATION> NOTIFICATIONs { get; set; }
 
     public virtual DbSet<NOTIFICATIONSETTING> NOTIFICATIONSETTINGs { get; set; }
 
@@ -35,6 +39,15 @@ public partial class DatingAPPContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<APPLICATION_LOG>(entity =>
+        {
+            entity.ToTable("APPLICATION_LOGS");
+
+            entity.Property(e => e.IPADDRESS).HasMaxLength(50);
+            entity.Property(e => e.TimeStamp).HasColumnType("datetime");
+            entity.Property(e => e.USEREMAIL).HasMaxLength(255);
+        });
+
         modelBuilder.Entity<CONTACT>(entity =>
         {
             entity.HasKey(e => e.CONTACTID).HasName("PK__CONTACTS__799118684D8763C6");
@@ -105,6 +118,27 @@ public partial class DatingAPPContext : DbContext
                 .HasForeignKey(d => d.USER2ID)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_MATCHES_USER2");
+        });
+
+        modelBuilder.Entity<NOTIFICATION>(entity =>
+        {
+            entity.HasKey(e => e.NOTIFICATIONID).HasName("PK__NOTIFICA__EAF93BF46FFB8192");
+
+            entity.ToTable("NOTIFICATIONS");
+
+            entity.Property(e => e.CREATEDAT)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.ISREAD).HasDefaultValue(false);
+            entity.Property(e => e.TITLE).HasMaxLength(200);
+            entity.Property(e => e.TYPE)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.USER).WithMany(p => p.NOTIFICATIONs)
+                .HasForeignKey(d => d.USERID)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_NOTIFICATIONS_USERS");
         });
 
         modelBuilder.Entity<NOTIFICATIONSETTING>(entity =>
@@ -270,3 +304,4 @@ public partial class DatingAPPContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+

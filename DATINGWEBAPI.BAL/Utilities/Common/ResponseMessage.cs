@@ -31,6 +31,8 @@
         InvalidMobileNumber = 22,
         LikeUserCurrentUserNotAllowed = 23,
         AlreadyExistsData=24,
+        FileType=25,
+        FileSize=26
     }
 
 }

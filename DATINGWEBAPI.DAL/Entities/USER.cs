@@ -59,6 +59,8 @@ public partial class USER
 
     public virtual ICollection<NOTIFICATIONSETTING> NOTIFICATIONSETTINGs { get; set; } = new List<NOTIFICATIONSETTING>();
 
+    public virtual ICollection<NOTIFICATION> NOTIFICATIONs { get; set; } = new List<NOTIFICATION>();
+
     public virtual ICollection<SWIPE> SWIPESWIPEDs { get; set; } = new List<SWIPE>();
 
     public virtual ICollection<SWIPE> SWIPESWIPERs { get; set; } = new List<SWIPE>();

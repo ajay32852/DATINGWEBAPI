@@ -55,26 +55,6 @@ namespace DATINGWEBAPI.BAL.Utilities.Common
             return salt + ':' + hash;
         }
 
-        /// <summary>
-        /// Helper to get enum description value
-        /// </summary>
-        /// <param name="enumValue"></param>
-        /// <returns></returns>
-        public static string GetDescription(this Enum enumValue)
-        {
-            var field = enumValue.GetType().GetField(enumValue.ToString());
-            if (field == null)
-                return enumValue.ToString();
-
-            var attributes = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
-            if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute attribute)
-            {
-                return attribute.Description;
-            }
-
-            return enumValue.ToString();
-        }
-
         public static bool isEmailValid(string email)
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");

@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Http;
+
 namespace DATINGWEBAPI.DTO.RequestDTO
 {
     public class LoginRequestDTO
@@ -19,6 +21,7 @@ namespace DATINGWEBAPI.DTO.RequestDTO
         public string? Location { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
+        public IFormFile? ProfileImage { get; set; }
 
     }
 }

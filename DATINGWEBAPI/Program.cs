@@ -1,18 +1,19 @@
+using System.Globalization;
+using System.Text;
+using System.Text.Json.Serialization;
+using DATINGWEBAPI.BAL;
+using DATINGWEBAPI.BAL.Hubs;
+using DATINGWEBAPI.BAL.Utilities.Common;
+using DATINGWEBAPI.BAL.Utilities.Extensions;
+using DATINGWEBAPI.BLL.Utilities.Common.Localization;
 using DATINGWEBAPI.DAL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.Localization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
-using Microsoft.Extensions.Localization;
-using DATINGWEBAPI.BLL.Utilities.Common.Localization;
-using System.Text.Json.Serialization;
 using Serilog;
-using Microsoft.AspNetCore.ResponseCompression;
-using DATINGWEBAPI.BAL.Utilities.Extensions;
-using DATINGWEBAPI.BAL;
-using DATINGWEBAPI.BAL.Utilities.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 Environment.SetEnvironmentVariable("BASEDIR", AppContext.BaseDirectory);
@@ -130,6 +131,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+// Map SignalR Hub
+app.MapHub<NotificationHub>("/notificationHub");
 
 var supportedCultures = new[] { "en-US", "ar-EG", "de-DE", "hi" };
 // For English (United States)
