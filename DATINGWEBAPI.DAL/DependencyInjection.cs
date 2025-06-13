@@ -17,6 +17,8 @@ namespace DATINGWEBAPI.DAL
             services.AddScoped<IVerificationCodeRepository, VerificationCodeRepository>();
             services.AddScoped<ISwipeRepository, SwipeRepository>();
             services.AddScoped<IUserMediaRepository, UserMediaRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<INotificationSettingRepository, NotificationSettingRepository>();
 
         }
 

@@ -73,7 +73,7 @@ namespace DATINGWEBAPI.Controllers
         [SwaggerResponse(400, "Invalid Request")]
         [SwaggerResponse(401, "Unauthorized")]
         [HttpPost("verify-otp")]
-        public async Task<IActionResult> VerifyOTP([FromBody] LoginRequestDTO loginRequestDTO)
+        public async Task<IActionResult> VerifyOTP([FromForm] LoginRequestDTO loginRequestDTO)
         {
             var validationResult = await _loginValidator.ValidateAsync(loginRequestDTO);
             if (!validationResult.IsValid)

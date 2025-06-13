@@ -23,7 +23,8 @@ namespace DATINGWEBAPI.BAL
                 Account account = new(config.CloudName, config.ApiKey, config.ApiSecret);
                 return new Cloudinary(account);
             });
-
+            // ADD SIGNALR SERVICES
+            services.AddSignalR();
             services.AddAutoMapper(typeof(AutoMapperProfiles));
             services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssemblyContaining<UserToLoginDTOValidator>();
@@ -34,6 +35,8 @@ namespace DATINGWEBAPI.BAL
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ISwipeService, SwipeService>();
             services.AddScoped<ICloudinaryService, CloudinaryService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<INotificationHubClient, NotificationHubClient>();
         }
 
     }

@@ -10,5 +10,6 @@ namespace DATINGWEBAPI.DTO.RequestDTO
 
         [Required(ErrorMessage = "Media type is required.")]
         public string MediaType { get; set; } // e.g., "image", "video" if extended
+        public bool IsProfileImage { get; set; } = false;
     }
 }

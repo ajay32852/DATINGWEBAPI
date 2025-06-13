@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DATINGWEBAPI.DAL.Entities;
 using DATINGWEBAPI.DTO.DTOs;
+using DATINGWEBAPI.DTO.RequestDTO;
 namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
 {
     public static class AutoMapperProfiles
@@ -94,6 +95,33 @@ namespace DATINGWEBAPI.BAL.Utilities.AutoMapperProfiles
                   .ForMember(dest => dest.USER, opt => opt.MapFrom(src => src.USER))
                   .ReverseMap();
 
+
+                CreateMap<NOTIFICATIONSETTING, NotificationSettingDTO>()
+                   .ForMember(dest => dest.NotificationSettingId, opt => opt.MapFrom(src => src.NOTIFICATIONSETTINGID))
+                   .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                   .ForMember(dest => dest.ReceiveMatchNotifications, opt => opt.MapFrom(src => src.RECEIVEMATCHNOTIFICATIONS))
+                   .ForMember(dest => dest.ReceiveMessageNotifications, opt => opt.MapFrom(src => src.RECEIVEMESSAGENOTIFICATIONS))
+                   .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATEDAT))
+                   .ForMember(dest => dest.USER, opt => opt.MapFrom(src => src.USER))
+                   .ReverseMap();
+
+                CreateMap<NOTIFICATION, NotificationDTO>()
+                    .ForMember(dest => dest.NotificationId, opt => opt.MapFrom(src => src.NOTIFICATIONID))
+                    .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.USERID))
+                    .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.TITLE))
+                    .ForMember(dest => dest.Message, opt => opt.MapFrom(src => src.MESSAGE))
+                    .ForMember(dest => dest.IsRead, opt => opt.MapFrom(src => src.ISREAD))
+                    .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CREATEDAT))
+                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.TYPE))
+                    .ForMember(dest => dest.USER, opt => opt.MapFrom(src => src.USER))
+                    .ReverseMap();
+
+                CreateMap<NotificationRequestDTO, NOTIFICATION>()
+                    .ForMember(dest => dest.NOTIFICATIONID, opt => opt.Ignore())
+                    .ForMember(dest => dest.USERID, opt => opt.Ignore())
+                    .ForMember(dest => dest.CREATEDAT, opt => opt.Ignore())
+                    .ForMember(dest => dest.ISREAD, opt => opt.Ignore())
+                    .ForMember(dest => dest.USER, opt => opt.Ignore());
 
 
 

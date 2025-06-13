@@ -2,6 +2,7 @@
 using DATINGWEBAPI.DAL.Entities;
 using DATINGWEBAPI.DAL.Repositories.IRepositories;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace DATINGWEBAPI.DAL.Repositories
 {
@@ -47,10 +48,33 @@ namespace DATINGWEBAPI.DAL.Repositories
                 await transaction.CommitAsync();
             }
         }
-
+        public async Task<List<USER_MEDIum>> getMediaImages(long userId)
+        {
+          return await datingAPPContext.USER_MEDIAs.Where(x => x.USERID == userId).OrderByDescending(x=>x.CREATED_AT).ToListAsync();
+        }
+        public async Task<USER_MEDIum> mediaImagesbyMediaId(string mediaId, long userId)
+        {
+            return await datingAPPContext.USER_MEDIAs
+                .Where(x => x.STORAGE_ID.EndsWith(mediaId))
+                .Where(x => x.USERID == userId)
+                .FirstOrDefaultAsync();
+        }
+        public async Task<bool> DeleteMediaImage(long userId, string mediaId)
+        {
+            var mediaEntity = await datingAPPContext.USER_MEDIAs
+                .Where(x => x.STORAGE_ID == mediaId && x.USERID == userId)
+                .FirstOrDefaultAsync();
+            if (mediaEntity != null)
+            {
+                datingAPPContext.USER_MEDIAs.Remove(mediaEntity);
+                await datingAPPContext.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
 
 
 
     }
-   
+
 }

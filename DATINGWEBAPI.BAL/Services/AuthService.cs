@@ -2,16 +2,17 @@
 using System.Numerics;
 using System.Security.Claims;
 using System.Text;
-using System.Text.RegularExpressions;
 using AutoMapper;
 using DATINGWEBAPI.BAL.Services.IServices;
 using DATINGWEBAPI.BAL.Utilities.Common;
+using DATINGWEBAPI.BAL.Utilities.CustomExceptions;
 using DATINGWEBAPI.BLL.Utilities.CustomExceptions;
 using DATINGWEBAPI.DAL.Entities;
 using DATINGWEBAPI.DAL.Repositories.IRepositories;
 using DATINGWEBAPI.DTO.DTOs;
 using DATINGWEBAPI.DTO.RequestDTO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
 using Microsoft.IdentityModel.Tokens;
@@ -26,6 +27,8 @@ namespace DATINGWEBAPI.BAL.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserRepository _userRepository;
         private readonly IVerificationCodeRepository _verificationCodeRepository;
+        private readonly INotificationSettingRepository _notificationSettingRepository;
+        private readonly ICloudinaryService _cloudinaryService;
 
         public AuthService(
             IMapper mapper,
@@ -33,7 +36,9 @@ namespace DATINGWEBAPI.BAL.Services
             IConfiguration configuration,
             IUserRepository userRepository,
             IHttpContextAccessor httpContextAccessor,
-            IVerificationCodeRepository verificationCodeRepository
+            IVerificationCodeRepository verificationCodeRepository,
+            INotificationSettingRepository notificationSettingRepository,
+            ICloudinaryService cloudinaryService
             )
         {
             _mapper = mapper;
@@ -42,6 +47,8 @@ namespace DATINGWEBAPI.BAL.Services
             _userRepository = userRepository;
             _httpContextAccessor = httpContextAccessor;
             _verificationCodeRepository = verificationCodeRepository;
+            _notificationSettingRepository = notificationSettingRepository;
+            _cloudinaryService = cloudinaryService;
         }
 
         public async Task<OTPMobileNoResponse?> RequestOTP(RequestOTPDTO requestOTPDTO)
@@ -70,7 +77,13 @@ namespace DATINGWEBAPI.BAL.Services
                     PROFILEIMAGEURL= "https://avatar.iran.liara.run/public/22",
                     BIO=string.Empty,
                 };
-                await _userRepository.AddNewUser(user);
+                var responseResult=await _userRepository.AddNewUser(user);
+                var mapResult = _mapper.Map<UserDTO>(responseResult);
+                if(mapResult is not null)
+                {
+                    await CreateDefaultNotificationSettingAsync(mapResult.UserId); 
+                }
+
             }
             if (user.ISBLOCKED)
             {
@@ -93,6 +106,18 @@ namespace DATINGWEBAPI.BAL.Services
                 OTP = otp
             };
         }
+        public async Task CreateDefaultNotificationSettingAsync(long userId)
+        {
+            var setting = new NOTIFICATIONSETTING
+            {
+                USERID = userId,
+                RECEIVEMATCHNOTIFICATIONS = true,
+                RECEIVEMESSAGENOTIFICATIONS = true,
+                CREATEDAT = DateTime.Now
+            };
+
+            await _notificationSettingRepository.CreateDefaultNotificationSettingAsync(setting);
+        }
         public async Task<UserLoginDTO?> VerifyOTP(LoginRequestDTO loginRequestDTO)
         {
             var userResponse = await _userRepository.GetUserByMobileAsync(loginRequestDTO.MobileNumber.ToString());
@@ -108,7 +133,7 @@ namespace DATINGWEBAPI.BAL.Services
                 throw new UserOTPInvalidException(_localizer[ResponseMessage.InvalidOTP.ToString()]);
             }
            
-            if (mapData.IsUsed || mapData.ExpiresAt < DateTime.UtcNow || mapData.Code != loginRequestDTO.OTP.ToString())
+            if (mapData.IsUsed || mapData.ExpiresAt < DateTime.Now || mapData.Code != loginRequestDTO.OTP.ToString())
             {
                 throw new UserOTPExpiredException(_localizer[ResponseMessage.OTPExpire.ToString()]);
             }
@@ -171,6 +196,22 @@ namespace DATINGWEBAPI.BAL.Services
                         UserId = user.UserId
                     });
                 }
+            }
+            //
+            if (loginRequestDTO.ProfileImage != null && loginRequestDTO.ProfileImage.Length > 0)
+            {
+
+                if (!loginRequestDTO.ProfileImage.ContentType.StartsWith("image/"))
+                throw new ValidationException(_localizer[ResponseMessage.FileType.ToString()]);
+                if (loginRequestDTO.ProfileImage.Length > 5 * 1024 * 1024)
+                throw new ValidationException(_localizer[ResponseMessage.FileSize.ToString()]);
+                var mediaRequest = new MediaUploadRequest
+                {
+                    File = loginRequestDTO.ProfileImage,
+                    MediaType = "image",
+                    IsProfileImage = true
+                };
+                await _cloudinaryService.AddMediaImages(user.UserId, mediaRequest);
             }
             user.AllowContactAccess = loginRequestDTO.AllowContactAccess ?? false;
             user.EnableNotifications = loginRequestDTO.EnableNotifications ?? true;

@@ -2,11 +2,15 @@
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using DATINGWEBAPI.BAL.Services.IServices;
+using DATINGWEBAPI.BAL.Utilities.Common;
+using DATINGWEBAPI.BAL.Utilities.Enum;
+using DATINGWEBAPI.BLL.Utilities.CustomExceptions;
 using DATINGWEBAPI.DAL.Entities;
 using DATINGWEBAPI.DAL.Repositories.IRepositories;
 using DATINGWEBAPI.DTO.DTOs;
 using DATINGWEBAPI.DTO.RequestDTO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
@@ -51,11 +55,12 @@ namespace DATINGWEBAPI.BAL.Services
             {
                 throw new Exception(_localizer["Failed to upload image: {0}", uploadResult.Error.Message]);
             }
+            var storageId = uploadResult.PublicId?.Replace(UploadStorageNameConst.DatingApp, string.Empty);
             var newMedia = new USER_MEDIum
             {
                 USERID = userId,
                 MEDIA_URL = uploadResult.SecureUrl.ToString(),
-                STORAGE_ID = uploadResult.PublicId,
+                STORAGE_ID = storageId,
                 MEDIA_TYPE = mediaUploadRequest.MediaType,
                 IS_PROFILE_PIC = false,
                 CREATED_AT = DateTime.UtcNow
@@ -64,6 +69,7 @@ namespace DATINGWEBAPI.BAL.Services
             var dto = _mapper.Map<UserMediaDTO>(SaveMediaResponse);
             return dto;
         }
+
 
         public async Task<UserStoryDTO> AddStory(long userId, CreateStoryRequestDTO request)
         {
@@ -99,7 +105,7 @@ namespace DATINGWEBAPI.BAL.Services
                 var uploadParams = new ImageUploadParams
                 {
                     File = new FileDescription(file.FileName, stream),
-                    Folder = "user_stories"
+                    Folder = UploadStorageNameConst.UserStories
                 };
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
             }
@@ -108,19 +114,65 @@ namespace DATINGWEBAPI.BAL.Services
                 var uploadParams = new VideoUploadParams
                 {
                     File = new FileDescription(file.FileName, stream),
-                    Folder = "user_stories"
+                    Folder = UploadStorageNameConst.UserStories
                 };
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
             }
             if (uploadResult.Error != null)
             {
-                throw new Exception($"Cloudinary upload failed: {uploadResult.Error.Message}");
+                throw new Exception(uploadResult.Error.Message);
             }
-            var mediaType = isImage ? "image" : "video";
+            var mediaType = isImage ? UploadStorageNameConst.image : UploadStorageNameConst.video;
             return (uploadResult.PublicId, uploadResult.SecureUrl.ToString(), mediaType);
         }
 
 
+        /// <summary>
+        /// get media images for a user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<List<UserMediaDTO>> getMediaImages(long userId)
+        {
+            var media = await _userMediaRepository.getMediaImages(userId);
+            if (media == null)
+            {
+                throw new NoDataException(_localizer[ResponseMessage.DataNotFound.ToString()]);
+            }
+            var dto = _mapper.Map<List<UserMediaDTO>>(media);
+            return dto;
+
+        }
+
+
+        public async Task<bool> DeleteMediaImage(long userId, string mediaId)
+        {
+            var mediaEntity = await _userMediaRepository.mediaImagesbyMediaId(mediaId,userId);
+            if (mediaEntity == null)
+            {
+                throw new NoDataException(_localizer[ResponseMessage.DataNotFound.ToString()]);
+            }
+            var mediaDto = _mapper.Map<UserMediaDTO>(mediaEntity);
+            string storageId = string.Concat(UploadStorageNameConst.DatingApp, mediaDto.StorageId);
+            string resourceType = mediaDto.MediaType.ToLowerInvariant();
+            var deletionParams = new DeletionParams(storageId);
+            if (resourceType == UploadStorageNameConst.video)
+            {
+                deletionParams.ResourceType = ResourceType.Video;
+            }
+            else
+            {
+                deletionParams.ResourceType = ResourceType.Image;
+            }
+
+            var result = await _cloudinary.DestroyAsync(deletionParams);
+            if (result.Result == "ok" || result.Result == "deleted")
+            {
+                await _userMediaRepository.DeleteMediaImage(userId,mediaId);
+                return true;
+            }
+            throw new Exception(_localizer[ResponseMessage.Fail.ToString()]);
+        }
 
 
 
